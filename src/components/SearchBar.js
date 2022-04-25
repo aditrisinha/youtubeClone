@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const SearchBar = () => {
+export const SearchBar = (props) => {
   const [term, setTerm] = useState("");
 
   const onInputChange = (event) => {
@@ -9,6 +9,7 @@ export const SearchBar = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+    props.onTermSubmit(term);
   };
 
   return (
